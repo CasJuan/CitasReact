@@ -2,9 +2,6 @@ import Paciente from "./Paciente"
 
 const ListadoPacientes = ({pacientes}) => {
 
-  
-
-
   return (
     <div className="md:w-1/2 lg:w3/5 md:h-screen overflow-scroll">
 
@@ -27,9 +24,9 @@ const ListadoPacientes = ({pacientes}) => {
         : 
         
         <>
-        <h2 className="font-black text-center text-3xl">No hay Paciente</h2>
-        <p className="text-xl mt-5 mb-10 text-center"> Comienza agregando pacientes {''}
-        <span className="text-indigo-600 font-bold ">apareceran en este lugar</span>
+        <h2 className="font-black text-center text-3xl">No hay Pacientes</h2>
+        <p className="text-xl mt-5 mb-10 text-center"> Comienza agregando tus pacientes {''}
+        <span className="text-indigo-600 font-bold ">aqui apareceran</span>
         </p>
         </>
         
