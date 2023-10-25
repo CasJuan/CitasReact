@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import Error from './Error';
 
 
-const Formulario = () => {
+const Formulario = ({pacientes,setPacientes}) => {
 
   const [nombre, setNombre ] = useState ('');
   const [propietario, setPropietario ] = useState ('');
@@ -9,8 +10,42 @@ const Formulario = () => {
   const [fecha, setFecha ] = useState ('');
   const [sintomas, setSintomas ] = useState ('');
 
+  const [error, setError] = useState(false);
+
   const handleSubmit = () => {
-      e.preventDefault();
+    //Validacion de Formulario
+    e.preventDefault();
+
+    if( [nombre,propietario,email,fecha,sintomas ].includes('')){
+      console.log('Hayl almenos un campo vacio');
+      
+      setError(true);
+      return;
+    }
+
+    setError(false);
+
+    //Objeto de Pacientes
+    const objetoPaciente = {
+      nombre,
+      propietario,
+      email,
+      fecha,
+      sintomas
+    }
+
+    //console.log(objetoPaciente);
+
+    setPacientes([...pacientes,objetoPaciente]);
+
+    //Reiniciar el form
+    setNombre('');
+    setPropietario('');
+    setEmail('');
+    setFecha('');
+    setSintomas('');
+
+
   }
 
 
@@ -23,9 +58,12 @@ const Formulario = () => {
         <span className="text-indigo-600 font-bold ">Admnistralos</span>
       </p>
 
-      <form className="bg-whi shadow-md rounded-lg py-10 px-5 mb-10"
-            onSubmit={handleSubmit}
+      <form 
+          className="bg-whi shadow-md rounded-lg py-10 px-5 mb-10"
+          onSubmit={handleSubmit}
       >
+        { error &&  <Error> <p>Todos los campos son obligatorios</p> </Error> }
+        
         <div className="mb-5">
           <label  htmlFor="mascota" className="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
           <input
