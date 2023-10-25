@@ -8,7 +8,7 @@ import ListadoPacientes from "./components/ListadoPacientes";
 
 function App() {
 
-  const [paceintes, setPacientes] = useState([]);
+  const [pacientes, setPacientes] = useState([]);
 
 
   return (
@@ -16,10 +16,11 @@ function App() {
       <Header/>
       <div className="mt-12 md:flex">
         <Formulario
-          paceintes = {paceintes}
-          setPacientes={setPacientes}
+          pacientes = {pacientes}
+          setPacientes={setPacientes}/>
+        <ListadoPacientes
+          pacientes = {pacientes}
         />
-        <ListadoPacientes/>
       </div>
     </div>
   )
