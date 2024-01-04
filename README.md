@@ -1,8 +1,19 @@
-# React + Vite
+#Citas de Pacientes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduccion
 
-Currently, two official plugins are available:
+Una pequeña aplicacion de gestor de citas donde se podran registrar citas, editarlas y eliminarlas. Esta aplicacion fue echa con fines de aprendizaje de un curso de Udemy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
+
+-React 
+-Tailwind
+-Vite
+
+
+
+
+
+
+
+
